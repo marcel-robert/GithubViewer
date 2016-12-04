@@ -3,23 +3,17 @@
 
   <head>
     <script data-require="angular.js@1.5.7" data-semver="1.5.7" src="https://code.angularjs.org/1.5.7/angular.js"></script>
+    <script data-require="angular-route@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="app.js"></script>
+    <script src="MainController.js"></script>
+    <script src="UserController.js"></script>
+    <script src="RepoController.js"></script>
     <script src="github.js"></script>
   </head>
 
-  <body ng-controller="MainController">
-    <h1>{{message}}</h1>
-    
-    <div>{{error}}</div>
-      
-    {{ countdown }}
-    <form name="searchUser" ng-submit="search(username)">
-      <input type="search" placeHolder="Username to find" ng-model="username" />
-      <input type="submit" value="search">
-    </form>
-      
-    <div ng-include="'userdetails.html'" ng-show="user"></div>
+  <body>
+    <h1>Github Viewer</h1>  
+    <div ng-view></div>
   </body>
-
 </html>
